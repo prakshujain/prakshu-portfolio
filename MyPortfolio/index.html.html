@@ -1,0 +1,479 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Creative designer portfolio — graphic design, social media, posters and visual identity." />
+  <title>PRAKSHU JAIN — Creative Portfolio</title>
+  <style>
+    
+/* Smooth reveal for sections and cards */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth hover effects */
+.service,
+.work-card,
+.hero-card,
+.btn {
+  transition: transform 0.35s ease, 
+              border-color 0.35s ease,
+              opacity 0.35s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-8px);
+}
+
+.service:hover {
+  transform: translateY(-5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.intro-screen {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.intro-small {
+  font-size: 14px;
+  letter-spacing: 5px;
+  color: #aaa;
+  animation: introUp 1s ease both;
+}
+
+.intro-name {
+  font-size: clamp(48px, 10vw, 120px);
+  line-height: 1.1;
+  letter-spacing: -4px;
+  margin: 15px 0;
+  animation: introUp 1s ease .2s both;
+}
+
+.intro-name span {
+  color: #aaa;
+}
+
+.intro-role {
+  font-size: clamp(20px, 3vw, 32px);
+  margin: 10px 0;
+  animation: introUp 1s ease .4s both;
+}
+
+.intro-description {
+  color: #aaa;
+  max-width: 500px;
+  line-height: 1.8;
+  animation: introUp 1s ease .6s both;
+}
+
+.intro-button {
+  color: #fff;
+  border: 1px solid #555;
+  padding: 15px 22px;
+  margin-top: 25px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  animation: introUp 1s ease .8s both;
+}
+
+.intro-button:hover {
+  background: #fff;
+  color: #000;
+}
+
+@keyframes introUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --bg: #10110f;
+      --panel: #181a17;
+      --text: #f4f2eb;
+      --muted: #aaa99f;
+      --accent: #d8ff66;
+      --line: rgba(244, 242, 235, .14);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Manrope', sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+    .mono { font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 25px 0; border-bottom: 1px solid var(--line);
+    }
+    .logo { font-weight: 800; letter-spacing: -.06em; font-size: 1.1rem; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 26px; align-items: center; color: var(--muted); font-size: .88rem; }
+    .nav-links a:hover, .text-link:hover { color: var(--accent); }
+    .nav-cta { color: var(--bg) !important; background: var(--accent); padding: 10px 15px; border-radius: 999px; font-weight: 800; }
+    .hero { min-height: 76vh; display: grid; grid-template-columns: 1.2fr .8fr; gap: 48px; align-items: center; padding: 80px 0 70px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--muted); margin-bottom: 25px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 18px #d8ff6680; }
+    h1 { font-size: clamp(3.4rem, 8.4vw, 7.6rem); line-height: .91; letter-spacing: -.085em; margin: 0; max-width: 780px; }
+    h1 em { font-style: normal; color: var(--accent); }
+    .hero-copy { max-width: 500px; color: var(--muted); font-size: 1.03rem; margin: 30px 0 26px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 13px 18px; border: 1px solid var(--line); border-radius: 999px; font-weight: 700; font-size: .9rem; transition: .2s ease; }
+    .btn.primary { background: var(--accent); color: #151610; border-color: var(--accent); }
+    .btn:hover { transform: translateY(-3px); }
+    .hero-card { background: var(--panel); border: 1px solid var(--line); padding: 15px; border-radius: 24px; transform: rotate(2deg); }
+    .portrait {
+      min-height: 340px; border-radius: 15px; overflow: hidden; position: relative;
+      background: radial-gradient(circle at 25% 20%, #d8ff66 0, transparent 29%),
+                  radial-gradient(circle at 85% 75%, #6c7552 0, transparent 32%),
+                  linear-gradient(135deg, #34382a, #20221d 65%, #55594a);
+      display: flex; align-items: end; padding: 23px;
+    }
+    .portrait::before { content: "✳"; position: absolute; top: 25px; right: 28px; color: var(--accent); font-size: 4rem; line-height: 1; }
+    .portrait-label { position: relative; font-size: 1.4rem; font-weight: 800; letter-spacing: -.05em; }
+    .card-foot { display: flex; justify-content: space-between; color: var(--muted); padding: 15px 4px 2px; }
+    section { padding: 90px 0; border-top: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 38px; }
+    .section-head h2 { font-size: clamp(2.2rem, 5vw, 4.5rem); letter-spacing: -.075em; line-height: 1; margin: 10px 0 0; }
+    .section-head p { color: var(--muted); max-width: 350px; margin: 0; }
+    .about-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 60px; }
+    .big-number { color: var(--accent); font-size: 5rem; letter-spacing: -.08em; font-weight: 800; line-height: 1; }
+    .about-text { font-size: clamp(1.2rem, 2.5vw, 2rem); letter-spacing: -.04em; line-height: 1.4; margin: 0; }
+    .about-text strong { color: var(--accent); font-weight: 600; }
+    .small-note { color: var(--muted); margin-top: 24px; max-width: 500px; }
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .service { min-height: 190px; padding: 22px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: .25s; }
+    .service:hover { border-color: var(--accent); transform: translateY(-5px); }
+    .service .num { color: var(--accent); }
+    .service h3 { font-size: 1.3rem; letter-spacing: -.045em; margin: 25px 0 0; }
+    .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .work-card { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--panel); }
+    .work-art {
+  width: 100%;
+  height: 300px;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+    .art-one { background: #d8ff66; color: #171910; }
+    .art-two { background: #e8c9b5; color: #38261f; }
+    .art-three { background: #b4c7ff; color: #1a2344; }
+    .art-four { background: #f2eee5; color: #22231e; }
+    .poster { font-size: clamp(2rem, 5vw, 4rem); font-weight: 800; letter-spacing: -.08em; line-height: .9; text-transform: uppercase; }
+    .poster small { display: block; font-family: 'DM Mono', monospace; letter-spacing: .12em; font-size: .7rem; margin-top: 18px; }
+    .work-meta { display: flex; justify-content: space-between; gap: 10px; padding: 17px 19px; }
+    .work-meta p { margin: 0; font-weight: 700; }
+    .work-meta span { color: var(--muted); font-size: .8rem; }
+    .contact-panel { background: var(--accent); color: #171910; border-radius: 24px; padding: clamp(28px, 6vw, 70px); display: flex; align-items: end; justify-content: space-between; gap: 30px; }
+    .contact-panel h2 { font-size: clamp(2.6rem, 7vw, 6.3rem); letter-spacing: -.09em; line-height: .93; margin: 12px 0 24px; max-width: 650px; }
+    .contact-panel .btn { border-color: #17191055; white-space: nowrap; }
+    footer { display: flex; justify-content: space-between; gap: 20px; color: var(--muted); padding: 25px 0; font-size: .8rem; }
+    .reveal { animation: rise .7s both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 30px, var(--max)); }
+      .nav-links { gap: 12px; font-size: .78rem; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 60px 0; gap: 35px; }
+      .hero-card { max-width: 420px; transform: none; }
+      .portrait { min-height: 260px; }
+      section { padding: 65px 0; }
+      .section-head, .about-grid { grid-template-columns: 1fr; display: grid; gap: 20px; }
+      .services { grid-template-columns: 1fr 1fr; }
+      .service { min-height: 155px; padding: 16px; }
+      .work-grid { grid-template-columns: 1fr; }
+      .work-art { min-height: 230px; }
+      .contact-panel { align-items: start; flex-direction: column; }
+      footer { flex-direction: column; }
+    }
+    @media (max-width: 420px) { .services { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<section class="intro-screen">
+  <p class="intro-small">HELLO! I'M</p>
+
+  <h1 class="intro-name">Prakshu Jain<span>.</span></h1>
+
+  <p class="intro-role">Creative Graphic Designer</p>
+
+  <p class="intro-description">
+    I create posters, social media posts and
+    creative designs that make brands stand out.
+  </p>
+
+  <a class="intro-button" href="#about">
+    EXPLORE MY WORK ↘
+  </a>
+  
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  document.querySelectorAll(
+    ".about, .services, .projects, .contact, .card, .project"
+  ).forEach((element) => {
+    element.classList.add("scroll-reveal");
+    observer.observe(element);
+  });
+</script>
+
+</section>
+
+
+  <header class="wrap nav">
+    <a class="logo" href="#home">PRAKSHU JAIN<span></span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#about">About me</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a class="nav-cta" href="#contact">Let's talk ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home" style="border-top:0">
+      <div class="reveal">
+        <div class="eyebrow mono"><span class="dot"></span> Available for creative projects</div>
+        <h1>Making ideas<br>look <em>good.</em></h1>
+        <p class="hero-copy">Hey, I'm <strong>PRAKSHU</strong> — a creative designer making scroll-stopping social posts, posters and visual content for brands that want to stand out.</p>
+        <div class="actions">
+          <a class="btn primary" href="#work">Explore my work ↘</a>
+          <a class="btn" href="#contact">Get in touch ↗</a>
+        </div>
+      </div>
+      <div class="hero-card reveal">
+        <img class="portrait-img" src="image14.png" alt="Prakshu Jain" />
+          <div class="portrait-label">Creative mind.<br>Clear visuals.</div>
+        <div class="card-foot mono"><span>Designer / Creator</span><span>India · 2026</span></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="mono">01 / A little about me</div><h2>Nice to meet you.</h2></div>
+          <p>Thoughtful design, strong visuals, and details that make people stop scrolling.</p>
+        </div>
+        <div class="about-grid">
+          <div><div class="big-number">01<span style="font-size:2rem">/</span></div><p class="small-note">Curiosity first. Creativity always.</p></div>
+          <div>
+            <p class="about-text">I turn ideas into <strong>clean, memorable visuals.</strong> From social media posts and promotional posters to creative layouts, I help bring a brand's personality to life.</p>
+            <p class="small-note">I enjoy experimenting with typography, colors, composition and trends.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="mono">02 / What I can do</div><h2>My services.</h2></div>
+          <p>Creative support for creators, small businesses and growing brands.</p>
+        </div>
+        <div class="services">
+          <article class="service"><span class="num mono">01 / Visuals</span><h3>Social Media Posts ↗</h3></article>
+          <article class="service"><span class="num mono">02 / Print & Digital</span><h3>Posters & Flyers ↗</h3></article>
+          <article class="service"><span class="num mono">03 / Identity</span><h3>Brand Graphics ↗</h3></article>
+          <article class="service"><span class="num mono">04 / Content</span><h3>Stories & Banners ↗</h3></article>
+          <article class="service"><span class="num mono">05 / Promotion</span><h3>Product Creatives ↗</h3></article>
+          <article class="service"><span class="num mono">06 / Design</span><h3>Custom Canva Designs ↗</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="mono">03 / Selected concepts</div><h2>A few things I've made.</h2></div>
+          <p>Here is my some work i done.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+  <div class="work-art">
+    <img src="image11.png" alt="Social Media Campaign">
+  </div>
+  <div class="work-meta">
+    <p>Social Media Campaign</p>
+    <span>01 / 04</span>
+  </div>
+</article>
+          <article class="work-card">
+  <div class="work-art">
+    <img src="image12.png" alt="Editorial Poster">
+  </div>
+  <div class="work-meta">
+    <p>Editorial Poster</p>
+    <span>02 / 04</span>
+  </div>
+</article>
+          <article class="work-card">
+  <div class="work-art">
+    <img src="image16.png" alt="Creator Graphic">
+  </div>
+  <div class="work-meta">
+    <p>Creator Graphic</p>
+    <span>03 / 04</span>
+  </div>
+</article>
+          <article class="work-card">
+  <div class="work-art">
+    <img src="image15.png" alt="Brand Visual">
+  </div>
+  <div class="work-meta">
+    <p>Brand Visual</p>
+    <span>04 / 04</span>
+  </div>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap contact-panel">
+        <div>
+          <div class="mono">04 / Have a project?</div>
+          <h2>Let's make something great.</h2>
+          <p>Have an idea or need a design? I'd love to hear about it.</p>
+        </div>
+        <a class="btn" id="jainprakshal123" href="mailto:jainprakshal@gmail.com">Email me ↗</a>
+        <a class="btn" href="tel:+917073384943">
+  Contact ↗
+</a>
+
+<a class="btn"
+   href="https://wa.me/917073384943"
+   target="_blank">
+   Chat on Whatsapp ↗
+</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+          <a href="#about">About me</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+    <a class="text-link" href="#home">Back to top ↑</a>
+    <span>© <span id="year"></span> PRAKSHU JAIN. All Rights Reserved.</span>
+  </footer>
+  <script>
+    
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(
+    "#about, #services, #work, #contact, " +
+    ".service, .work-card, .about-grid, .section-head"
+  );
+
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach(el => el.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12
+  });
+
+  elements.forEach(el => {
+    el.classList.add("reveal-on-scroll");
+    observer.observe(el);
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(
+    "#about, #services, #work, #contact, " +
+    ".service, .work-card, .about-grid, .section-head"
+  );
+
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach(el => el.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12
+  });
+
+  elements.forEach(el => {
+    el.classList.add("reveal-on-scroll");
+    observer.observe(el);
+  });
+});
+</script>
